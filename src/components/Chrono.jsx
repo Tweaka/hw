@@ -40,20 +40,36 @@ function Chrono() {
     return `${minutes}:${seconds}:${milliseconds}`;
   };
 
+  //TODO 2e timer à 00:00:00 quand on clique sur lap
+
+  //TODO disable lap quand timer à 00:00:00 (ou STOP actif)
+
   return (
-    <div>
-      <div>{formatTime(time)}</div>
-      {!timerOn && <button onClick={handleStart}>Start</button>}
-      {timerOn && <button onClick={handleStop}>Stop</button>}
-      <button onClick={handleReset}>Reset</button>
-      <button onClick={handleLap}>Lap</button>
+    <div className=" flex flex-col items-center  ">
+      <div className=" text-9xl pb-10 pt-6 ">{formatTime(time)}</div>
+      <div className="btn-group">
+        {!timerOn && (
+          <button className="btn btn-outline btn-success" onClick={handleStart}>
+            Start
+          </button>
+        )}
+        {timerOn && (
+          <button className="btn btn-outline btn-error" onClick={handleStop}>
+            Stop
+          </button>
+        )}
+        <button className="btn btn-outline btn-warning" onClick={handleReset}>
+          Reset
+        </button>
+        <button className="btn btn-outline btn-info" onClick={handleLap}>
+          Lap
+        </button>
+      </div>
       <ul>
         {laps.map((lap, index) => (
           <li key={index}>{formatTime(lap)}</li>
         ))}
       </ul>
-
-     
     </div>
   );
 }

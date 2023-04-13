@@ -1,17 +1,20 @@
-import React from 'react'
+import React from 'react';
+import '../../src/custom.css';
 
 export default function Spotify() {
   return (
-	<div>
+    <div className="relative">
+      <div className="spotify absolute">
+        <iframe
+          src="https://open.spotify.com/embed/playlist/0EIFErlsvlhd1xhU3bVGnN?"
+          width="100%"
+          height="100%"
+          style={{ minHeight: '360px' }}
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        />
 
-<iframe
-  title="Spotify Embed: Recommendation Playlist "
-  src="https://open.spotify.com/embed/track/25H2jh84o1iYZrJvL3rU9q?utm_source=generator"  width="100%"
-  height="100%"
-  style={{ minHeight: '360px' }}
-  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-  loading="lazy"
-/>
-	</div>
-  )
+      </div>
+    </div>
+  );
 }
