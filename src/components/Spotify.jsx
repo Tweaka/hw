@@ -3,8 +3,8 @@ import '../../src/custom.css';
 
 export default function Spotify() {
   return (
-    <div className="relative">
-      <div className="spotify absolute">
+    <div className="pt-6">
+      <div className="spotify ">
         <iframe
           src="https://open.spotify.com/embed/playlist/0EIFErlsvlhd1xhU3bVGnN?"
           width="100%"

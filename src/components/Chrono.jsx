@@ -65,11 +65,14 @@ function Chrono() {
           Lap
         </button>
       </div>
+      <div style={{ maxHeight: '300px', width: '250px' , overflow: 'auto' }}>
+
       <ul>
         {laps.map((lap, index) => (
           <li key={index}>{formatTime(lap)}</li>
         ))}
       </ul>
+            </div>
     </div>
   );
 }
